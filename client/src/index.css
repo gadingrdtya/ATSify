@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 font-sans antialiased;
+  }
+}
+
+@layer components {
+  .pill {
+    @apply rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700 transition-colors hover:bg-slate-200;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-white/40 shadow-sm shadow-slate-200/50;
+  }
+  .input-modern {
+    @apply w-full bg-slate-50 border border-slate-200 p-2.5 rounded-xl text-sm outline-none transition-all focus:bg-white focus:border-teal-400 focus:ring-4 focus:ring-teal-100;
+  }
+  .btn-ai {
+    @apply flex items-center justify-center gap-1.5 text-xs font-semibold text-white bg-gradient-to-r from-teal-500 to-emerald-500 px-3 py-1.5 rounded-lg shadow-md hover:from-teal-600 hover:to-emerald-600 hover:shadow-lg transition-all active:scale-95 disabled:opacity-70 disabled:pointer-events-none;
+  }
+  .btn-outline {
+    @apply flex items-center justify-center gap-1.5 text-xs font-semibold text-slate-600 bg-white border border-slate-200 px-3 py-1.5 rounded-lg shadow-sm hover:bg-slate-50 hover:text-slate-900 transition-all active:scale-95;
+  }
+  .card-modern {
+    @apply bg-white border border-slate-100 rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow;
+  }
+
+  /* Custom Animations for Landing Page */
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+  body, html {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: white !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  
+  #root, .min-h-screen, main {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  #cv-paper {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .print-section {
+    page-break-inside: avoid;
+  }
+}

@@ -1,0 +1,43 @@
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+client/.env
+client/.env.*
+server/.env
+server/.env.*
+
+# Sensitive & Do Not Push Folders
+"DO NOT PUSH TO GITHUB"
+"DO NOT PUSH TO GITHUB/"
+DO NOT PUSH TO GITHUB/
+DO NOT PUSH TO GITHUB
+
+# Temporary / Backup Files
+backup_preview.jsx
+*.bak
+*.tmp
+
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Production Builds
+dist/
+dist-ssr/
+client/dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Editor / System
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
